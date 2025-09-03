@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 LOKESH Loki mams - THE ULTIMATE PARADOX 🔥</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --love-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            --success-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            --warning-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            --gallery-gradient: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+            --video-gradient: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --text-primary: #2d3436;
+            --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-gradient);
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-glass);
+            border-radius: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            overflow: hidden;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #ffd700, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+            text-align: center;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            100% { text-shadow: 0 0 40px rgba(255, 215, 0, 0.8); }
+        }
+
+        .paradox-subtitle {
+            font-size: 1.8rem;
+            color: white;
+            text-align: center;
+            margin: 20px 0;
+            opacity: 0.95;
+        }
+
+        .personality-grid {
+            padding: 80px 0;
+            background: var(--success-gradient);
+        }
+
+        .personality-card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .personality-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .personality-card:hover {
+            transform: translateY(-15px) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .personality-card:hover::before {
+            left: 100%;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+            background: var(--gallery-gradient);
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) rotateZ(2deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .gallery-placeholder {
+            height: 300px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 25px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-caption {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-upload-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .gallery-item:hover .gallery-upload-btn {
+            opacity: 1;
+        }
+
+        .gallery-upload-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 100px 0;
+            background: var(--video-gradient);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .video-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .video-placeholder {
+            height: 250px;
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border: 3px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .play-button:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: white;
+            transform: scale(1.1);
+        }
+
+        .video-info {
+            padding: 25px;
+        }
+
+        .video-upload-area {
+            position: relative;
+            border: 2px dashed #ddd;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            background: rgba(255,255,255,0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-upload-area:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .video-upload-area.dragover {
+            border-color: #764ba2;
+            background: rgba(118, 75, 162, 0.1);
+            transform: scale(1.02);
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 25px;
+            border: none;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+        }
+
+        /* Floating Action Buttons */
+        .floating-actions {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        .fab-primary {
+            background: var(--primary-gradient);
+        }
+
+        .fab-success {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+        }
+
+        .fab-danger {
+            background: linear-gradient(135deg, #e17055, #fd79a8);
+        }
+
+        /* Animation Classes */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .countdown-section {
+            padding: 80px 0;
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .countdown-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 25px 15px;
+            border-radius: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-primary);
+        }
+
+        .btn-modern {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-3px);
+            color: white;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Previous sections remain the same... */
+        .contradiction-section {
+            padding: 80px 0;
+            background: var(--warning-gradient);
+        }
+
+        .vs-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 15px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .vs-card:hover {
+            transform: scale(1.05);
+        }
+
+        .expectation {
+            border-left: 5px solid #00b894;
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+        }
+
+        .reality {
+            border-left: 5px solid #e17055;
+            background: linear-gradient(135deg, #e17055, #fd79a8);
+            color: white;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: floatHeart 10s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes floatHeart {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            25% { transform: translateY(-30px) rotate(10deg); opacity: 1; }
+            50% { transform: translateY(-60px) rotate(-10deg); opacity: 0.8; }
+            75% { transform: translateY(-30px) rotate(5deg); opacity: 1; }
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; color: #ff6b6b; }
+        .heart:nth-child(2) { left: 25%; animation-delay: 2s; color: #4ecdc4; }
+        .heart:nth-child(3) { left: 50%; animation-delay: 4s; color: #45b7d1; }
+        .heart:nth-child(4) { left: 75%; animation-delay: 6s; color: #f9ca24; }
+        .heart:nth-child(5) { left: 90%; animation-delay: 8s; color: #6c5ce7; }
+
+        @media (max-width: 768px) {
+            .personality-card { padding: 20px; }
+            .main-title { font-size: 2.5rem; }
+            .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
+            .video-grid { grid-template-columns: 1fr; gap: 20px; }
+            .floating-actions { bottom: 20px; right: 20px; }
+            .fab { width: 50px; height: 50px; font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-hearts">
+            <div class="heart">💔</div>
+            <div class="heart">😭</div>
+            <div class="heart">👔</div>
+            <div class="heart">📚</div>
+            <div class="heart">💼</div>
+        </div>
+        
+        <div class="container text-center text-white">
+            <h1 class="main-title">LOKESH Loki mams</h1>
+            <p class="paradox-subtitle">The Living Contradiction! 🎭</p>
+            
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="glass p-4">
+                        <h4>🎯 What He Thinks He Is:</h4>
+                        <p class="fs-5">"Ultimate Playboy, Business Mastermind, Style Icon"</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass p-4">
+                        <h4>😂 What We All Know:</h4>
+                        <p class="fs-5">"Soft-hearted Mama's Boy with Engineering Backlogs"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <button class="btn btn-modern" onclick="startPersonalityRoast()">
+                    <i class="fas fa-fire"></i> Begin The Ultimate Personality Roast! <i class="fas fa-fire"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2 class="text-center mb-5">⏰ Countdown to Loki mams's Paradox Day!</h2>
+            <div class="row text-center" id="countdown">
+                <div class="col-3">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="days">00</div>
+                        <div>Days</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div>Hours</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div>Minutes</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div>Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personality Analysis -->
+    <section class="personality-grid">
+        <div class="container">
+            <h2 class="section-title">🧠 The Lokesh Loki mams Personality Analysis 🧠</h2>
+            
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="personality-card fade-in-up">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-crown fa-3x" style="color: #f39c12;"></i>
+                        </div>
+                        <h4>The Confidence Paradox</h4>
+                        <p>Loki mams is the most confident person you'll ever meet... until someone actually challenges him! Then our "Mass Mama" becomes "Cry Baby Loki mams" faster than his engineering grades dropped! 😂</p>
+                        <div class="text-center">
+                            <span class="badge bg-warning">Confidence: 100% | Reality Check: 0%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="personality-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-heart-broken fa-3x" style="color: #e74c3c;"></i>
+                        </div>
+                        <h4>The Soft-Hearted "Tough Guy"</h4>
+                        <p>Claims to be a playboy but cries when someone hurts his feelings! Our Loki mams has the heart of a teddy bear wrapped in the dreams of a tiger! Even revenge is too mean for this sweet soul! 🧸</p>
+                        <div class="text-center">
+                            <span class="badge bg-danger">Toughness: 10% | Softness: 200%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="personality-card fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-graduation-cap fa-3x" style="color: #e17055;"></i>
+                        </div>
+                        <h4>Business Mind vs Engineering Reality</h4>
+                        <p>Dreams of becoming the next big business tycoon while his engineering backlogs pile up like his unrequited crushes! Loki mams's business plans are as successful as his love life! 📚💔</p>
+                        <div class="text-center">
+                            <span class="badge bg-info">Business Dreams: ∞ | Cleared Subjects: 40%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">📸 Loki mams's Hall of Fame Gallery 📸</h2>
+            <p class="text-center fs-5 mb-4">From confidence poses to cringe moments - capturing Loki mams's journey through life! 😂</p>
+            
+            <div class="text-center mb-4">
+                <button class="btn btn-modern me-3" onclick="openUploadModal('photo')">
+                    <i class="fas fa-plus"></i> Add Photos
+                </button>
+                <button class="btn btn-modern" onclick="openGalleryFullscreen()">
+                    <i class="fas fa-expand"></i> View Slideshow
+                </button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Photo Upload Area -->
+                <div class="gallery-item">
+                    <div class="gallery-placeholder" onclick="openUploadModal('photo')">
+                        <div class="text-center">
+                            <i class="fas fa-camera fa-4x mb-3"></i>
+                            <h5>Upload Loki mams's Epic Moment</h5>
+                            <p>Click to add your favorite Loki mams photo!</p>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>📱 Add New Memory</h6>
+                        <p class="text-muted">Share Loki mams's funniest moments!</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Items -->
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="text-center">
+                            <i class="fas fa-user-tie fa-4x mb-3"></i>
+                            <h6>The "Business Meeting" Look</h6>
+                            <small>When Loki mams thought he was in a board meeting</small>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>The Overconfident CEO</h5>
+                        <p>Loki mams posing like he owns the company... spoiler alert: he doesn't! 😂</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>💼 Business Loki mams</h6>
+                        <p class="text-muted">Confidence level: Over 9000!</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="text-center">
+                            <i class="fas fa-tshirt fa-4x mb-3"></i>
+                            <h6>Fashion Icon Moment</h6>
+                            <small>Loki mams's style game is unmatched!</small>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Style King Loki mams</h5>
+                        <p>The ONE thing we can't roast - his incredible fashion sense! 👔✨</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>👔 Fashion Forward</h6>
+                        <p class="text-muted">Best dressed in the gang, no cap!</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="text-center">
+                            <i class="fas fa-heart-broken fa-4x mb-3"></i>
+                            <h6>The "Thinking About K" Face</h6>
+                            <small>When he's lost in thought about his mystery crush</small>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Dreamer Loki mams</h5>
+                        <p>Probably imagining his life with the girl whose name starts with K! 💭💕</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>💭 Lost in Dreams</h6>
+                        <p class="text-muted">Classic Loki mams daydreaming moment!</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="text-center">
+                            <i class="fas fa-laugh fa-4x mb-3"></i>
+                            <h6>The Happy Cringe Post</h6>
+                            <small>Loki mams being genuinely happy with his content</small>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Pure Joy Loki mams</h5>
+                        <p>This is why we love him - he's genuinely happy even when it's cringe! 😂💛</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>😊 Genuine Happiness</h6>
+                        <p class="text-muted">Loki mams's infectious joy!</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="text-center">
+                            <i class="fas fa-users fa-4x mb-3"></i>
+                            <h6>Gang's Favorite Target</h6>
+                            <small>Group photo where everyone's trolling Loki mams</small>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Troll Target Supreme</h5>
+                        <p>The moment everyone realized Loki mams is too precious not to troll! 😈💛</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>👥 Gang Love</h6>
+                        <p class="text-muted">Everyone's favorite person to roast with love!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title text-white">🎬 Loki mams's Viral Moments Collection 🎬</h2>
+            <p class="text-center text-white fs-5 mb-4">The videos that capture Loki mams's essence - confidence, style, and beautiful contradictions! 📹</p>
+            
+            <div class="text-center mb-4">
+                <button class="btn btn-modern me-3" onclick="openUploadModal('video')">
+                    <i class="fas fa-video"></i> Upload Videos
+                </button>
+                <button class="btn btn-modern" onclick="createVideoPlaylist()">
+                    <i class="fas fa-play-circle"></i> Create Playlist
+                </button>
+            </div>
+
+            <div class="video-grid">
+                <!-- Video Upload Area -->
+                <div class="video-card">
+                    <div class="video-upload-area" onclick="openUploadModal('video')" ondrop="handleVideoDrop(event)" ondragover="handleDragOver(event)">
+                        <i class="fas fa-cloud-upload-alt fa-4x mb-3" style="color: #667eea;"></i>
+                        <h5>Drag & Drop Videos Here</h5>
+                        <p>Or click to browse and upload Loki mams's epic moments!</p>
+                        <div class="mt-3">
+                            <small class="text-muted">Supported: MP4, AVI, MOV (Max: 100MB)</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Cards -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-button" onclick="playDemoVideo('confidence')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <h5>The Confidence Speech</h5>
+                        <p>Loki mams explaining why he's a playboy</p>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-crown"></i> Confidence Overload</h6>
+                        <p>Watch Loki mams give a motivational speech about his dating skills while his friends die laughing in the background! 😂</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Epic Cringe</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 2:30 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-button" onclick="playDemoVideo('style')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <h5>Fashion Show Loki mams</h5>
+                        <p>Loki mams's style transformation video</p>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-tshirt"></i> Style Icon Moments</h6>
+                        <p>Actually, this one's legit! Loki mams showing off his incredible fashion sense. We can't roast this - he genuinely looks amazing! ✨</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">Actually Fire</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 1:45 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-button" onclick="playDemoVideo('crying')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <h5>The Emotional Breakdown</h5>
+                        <p>When someone was mean to Loki mams</p>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-heart"></i> Soft Heart Revealed</h6>
+                        <p>The moment we all realized our "tough guy" Loki mams is actually the sweetest person alive. This is why we love him! 💛</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-danger">Pure Emotions</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 0:58 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-button" onclick="playDemoVideo('business')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <h5>Business Presentation</h5>
+                        <p>Loki mams's "million dollar" idea pitch</p>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-chart-line"></i> CEO Dreams</h6>
+                        <p>Loki mams presenting his business plan with full confidence while having 15 engineering backlogs. The audacity is inspiring! 💼</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info">Delusional Confidence</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 3:20 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-button" onclick="playDemoVideo('instagram')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <h5>Instagram Story Making</h5>
+                        <p>Behind the scenes of Loki mams's cringe posts</p>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fab fa-instagram"></i> Content Creation</h6>
+                        <p>Watch Loki mams genuinely enjoying making his cringe Instagram stories. His happiness is so pure, we can't even be mad! 📱</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">Wholesome Cringe</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 2:15 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <div class="play-button" onclick="playDemoVideo('mystery')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <h5>Talking About "K"</h5>
+                        <p>Loki mams's mysterious love story hints</p>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-heart"></i> The K Mystery</h6>
+                        <p>Rare footage of Loki mams actually opening up about his feelings. Still won't reveal who "K" is, but the emotions are real! 💕</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-danger">Top Secret</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 1:30 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Wishes Section (keeping the original) -->
+    <section class="wishes-section" style="padding: 80px 0; background: var(--love-gradient);">
+        <div class="container">
+            <h2 class="section-title">💝 Birthday Love & Roasts for Loki mams 💝</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="personality-card">
+                        <form id="wishForm">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Your Name</label>
+                                <input type="text" class="form-control" id="wishName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Message Type</label>
+                                <select class="form-control" id="messageType">
+                                    <option>Loving Roast 😂💛</option>
+                                    <option>Pure Love 💛</option>
+                                    <option>Savage Truth 🔥</option>
+                                    <option>Motivational (With Love) 💪</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Your Message for Loki mams</label>
+                                <textarea class="form-control" id="wishMessage" rows="4" placeholder="Write your birthday message..." required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-modern">
+                                    <i class="fas fa-heart"></i> Send Love & Roast!
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5" id="wishesContainer">
+                <!-- Wishes will appear here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <button class="fab fab-primary" onclick="scrollToTop()" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <button class="fab fab-success" onclick="openUploadModal('photo')" title="Add Photo">
+            <i class="fas fa-camera"></i>
+        </button>
+        <button class="fab fab-danger" onclick="openUploadModal('video')" title="Add Video">
+            <i class="fas fa-video"></i>
+        </button>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal fade" id="uploadModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">📸 Add Loki mams's Memory</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <div id="uploadPreview" class="mb-3"></div>
+                        <input type="file" id="fileInput" class="d-none" accept="image/*,video/*" onchange="previewFile(this)">
+                        <button class="btn btn-modern" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-plus"></i> Choose File
+                        </button>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Title</label>
+                        <input type="text" class="form-control" id="uploadTitle" placeholder="Give this memory a funny title...">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Description</label>
+                        <textarea class="form-control" id="uploadDescription" rows="3" placeholder="Tell us the story behind this moment..."></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Roast Level</label>
+                        <select class="form-control" id="roastLevel">
+                            <option>😊 Friendly Tease</option>
+                            <option>😂 Classic Roast</option>
+                            <option>🔥 Savage Mode</option>
+                            <option>💛 Pure Love</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-modern" onclick="uploadMemory()">
+                        <i class="fas fa-upload"></i> Add to Gallery
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #2d3436, #636e72); color: white; padding: 60px 0;">
+        <div class="container text-center">
+            <h3 class="mb-4">🎂 September 4th, 2025 - Loki mams's Special Day! 🎂</h3>
+            <p class="fs-5 mb-4">For our favorite contradiction, fashion icon, soft-hearted "playboy", and the most loveable person we know! 💛</p>
+            
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>👔 Best Dressed</h5>
+                    <p>Always looking sharp!</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>💛 Biggest Heart</h5>
+                    <p>Loves everyone deeply!</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>😂 Best Entertainment</h5>
+                    <p>Keeps us laughing always!</p>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <button class="btn btn-modern me-3" onclick="downloadGallery()">
+                    <i class="fas fa-download"></i> Download Memories
+                </button>
+                <button class="btn btn-modern" onclick="shareTheRoast()">
+                    <i class="fas fa-share"></i> Share Loki mams's Roast
+                </button>
+            </div>
+            
+            <p class="mt-4 opacity-75">Happy Birthday Loki mams! You're our favorite beautiful contradiction! 💛😂</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const birthday = new Date('2025-09-04T00:00:00+05:30');
+            const now = new Date();
+            const diff = birthday - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = '<div class="col-12"><h2>🎉 IT\'S Loki mams\'S BIRTHDAY! 🎉</h2></div>';
+            }
+        }
+
+        // Gallery Functions
+        function openUploadModal(type) {
+            const modal = new bootstrap.Modal(document.getElementById('uploadModal'));
+            const title = document.querySelector('#uploadModal .modal-title');
+            const fileInput = document.getElementById('fileInput');
+            
+            if (type === 'photo') {
+                title.textContent = '📸 Add Loki mams\'s Photo Memory';
+                fileInput.accept = 'image/*';
+            } else {
+                title.textContent = '🎬 Add Loki mams\'s Video Memory';
+                fileInput.accept = 'video/*';
+            }
+            
+            modal.show();
+        }
+
+        function previewFile(input) {
+            const preview = document.getElementById('uploadPreview');
+            const file = input.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    if (file.type.startsWith('image/')) {
+                        preview.innerHTML = `<img src="${e.target.result}" class="img-fluid rounded" style="max-height: 200px;">`;
+                    } else if (file.type.startsWith('video/')) {
+                        preview.innerHTML = `<video src="${e.target.result}" class="img-fluid rounded" style="max-height: 200px;" controls></video>`;
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function uploadMemory() {
+            const title = document.getElementById('uploadTitle').value;
+            const description = document.getElementById('uploadDescription').value;
+            const roastLevel = document.getElementById('roastLevel').value;
+            
+            if (!title) {
+                alert('Please add a title for this memory!');
+                return;
+            }
+            
+            // Simulate upload success
+            alert(`🎉 Memory Added Successfully!\n\nTitle: ${title}\nRoast Level: ${roastLevel}\n\nLoki mams's going to love/hate this! 😂`);
+            
+            // Close modal and reset form
+            bootstrap.Modal.getInstance(document.getElementById('uploadModal')).hide();
+            document.getElementById('uploadTitle').value = '';
+            document.getElementById('uploadDescription').value = '';
+            document.getElementById('uploadPreview').innerHTML = '';
+            document.getElementById('fileInput').value = '';
+            
+            showHearts();
+        }
+
+        // Video Functions
+        function playDemoVideo(type) {
+            const messages = {
+                confidence: "🎬 Playing: The Confidence Speech\n\n'I am the ultimate playboy!' - Loki mams, 2024\n*Narrator: He was not the ultimate playboy* 😂",
+                style: "🎬 Playing: Fashion Show Loki mams\n\nThis one's actually fire! Loki mams's style game is unmatched. We can't roast perfection! ✨👔",
+                crying: "🎬 Playing: The Emotional Breakdown\n\nOur tough guy Loki mams showing his soft heart. This is why we love him so much! 💛😭",
+                business: "🎬 Playing: Business Presentation\n\n'My business will make millions!' - Loki mams with 15 backlogs 😂💼",
+                instagram: "🎬 Playing: Instagram Story Making\n\nWatch Loki mams create content with pure joy. His happiness is infectious! 📱😊",
+                mystery: "🎬 Playing: Talking About 'K'\n\nRare footage of Loki mams opening up about his feelings. Still won't tell us who she is! 💕🤫"
+            };
+            
+            alert(messages[type]);
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.currentTarget.classList.add('dragover');
+        }
+
+        function handleVideoDrop(e) {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                const fileInput = document.getElementById('fileInput');
+                fileInput.files = files;
+                previewFile(fileInput);
+                openUploadModal('video');
+            }
+        }
+
+        function createVideoPlaylist() {
+            alert("🎵 Creating Loki mams's Epic Playlist! 🎵\n\nCombining all of Loki mams's legendary moments into one epic compilation! This is going to be the best birthday gift ever! 🎬✨");
+        }
+
+        function openGalleryFullscreen() {
+            alert("📱 Gallery Slideshow Mode! 📱\n\nGet ready for a full-screen journey through Loki mams's most memorable moments! Grab some popcorn! 🍿😂");
+        }
+
+        // Birthday wishes (keeping original functionality)
+        document.getElementById('wishForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('wishName').value;
+            const message = document.getElementById('wishMessage').value;
+            const type = document.getElementById('messageType').value;
+            
+            if (name && message) {
+                addWish(name, message, type);
+                this.reset();
+                showHearts();
+            }
+        });
+
+        function addWish(name, message, type) {
+            const wishesContainer = document.getElementById('wishesContainer');
+            const wishCard = document.createElement('div');
+            wishCard.className = 'col-lg-6 mb-4 fade-in-up';
+            
+            const typeColors = {
+                'Loving Roast 😂💛': 'bg-warning',
+                'Pure Love 💛': 'bg-success',
+                'Savage Truth 🔥': 'bg-danger',
+                'Motivational (With Love) 💪': 'bg-info'
+            };
+
+            wishCard.innerHTML = `
+                <div class="personality-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="mb-0"><i class="fas fa-user-heart"></i> ${name}</h6>
+                        <span class="badge ${typeColors[type]} rounded-pill">${type}</span>
+                    </div>
+                    <p>${message}</p>
+                    <small class="text-muted"><i class="far fa-clock"></i> ${new Date().toLocaleString()}</small>
+                </div>
+            `;
+            
+            wishesContainer.insertBefore(wishCard, wishesContainer.firstChild);
+        }
+
+        // Utility Functions
+        function startPersonalityRoast() {
+            showHearts();
+            document.querySelector('.personality-grid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showHearts() {
+            const colors = ['💛', '💚', '💙', '💜', '❤️', '🧡'];
+            
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.textContent = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.position = 'fixed';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = '100%';
+                heart.style.fontSize = '2rem';
+                heart.style.zIndex = '9999';
+                heart.style.pointerEvents = 'none';
+                heart.style.animation = `heartFloat ${Math.random() * 3 + 2}s ease-out forwards`;
+                document.body.appendChild(heart);
+
+                setTimeout(() => heart.remove(), 4000);
+            }
+        }
+
+        function downloadGallery() {
+            alert("📥 Downloading Loki mams's Memory Package! 📥\n\nCreating a ZIP file with all photos, videos, and birthday wishes! Perfect keepsake for Loki mams! 💾✨");
+        }
+
+        function shareTheRoast() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Lokesh Loki mams\'s Birthday Roast!',
+                    text: 'Come celebrate our favorite stylish, soft-hearted, confident contradiction! 😂💛',
+                    url: window.location.href
+                });
+            } else {
+                alert("📱 Share Loki mams's Birthday Roast!\n\nCopy this URL and let everyone join the celebration of our favorite beautiful disaster! 😂💛");
+            }
+        }
+
+        // Sample wishes
+        const sampleWishes = [
+            {
+                name: "Best Friend Forever",
+                message: "Loki mams, you beautiful paradox! Happy Birthday to the most confident crybaby, the stylish engineer with backlogs, and the playboy who runs away from girls! We love you exactly as you are! 💛😂",
+                type: "Loving Roast 😂💛"
+            },
+            {
+                name: "College Gang",
+                message: "Happy Birthday to our favorite troll target! Loki mams, your confidence is inspiring, your heart is pure gold, and your fashion sense is unmatched! Keep being your amazing contradictory self! 👔💛",
+                type: "Pure Love 💛"
+            }
+        ];
+
+        // Add heart float animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes heartFloat {
+                to {
+                    transform: translateY(-100vh);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+            
+            // Add sample wishes after delay
+            setTimeout(() => {
+                sampleWishes.forEach((wish, index) => {
+                    setTimeout(() => addWish(wish.name, wish.message, wish.type), index * 1500);
+                });
+            }, 2000);
+
+            // Add scroll animations
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.personality-card, .gallery-item, .video-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
