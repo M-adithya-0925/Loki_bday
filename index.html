@@ -10,367 +10,262 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="%23667eea" opacity="0.8"/></svg>'), auto;
         }
 
         :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --accent: #f093fb;
-            --success: #00b894;
-            --warning: #fdcb6e;
-            --danger: #e17055;
-            --dark: #2d3436;
-            --light: #ddd6fe;
+            /* Settled Color Gradients - Professional & Modern */
+            --hero-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --primary-gradient: linear-gradient(135deg, #556270 0%, #FF6B6B 100%);
+            --secondary-gradient: linear-gradient(135deg, #4ECDC4 0%, #556270 100%);
+            --accent-gradient: linear-gradient(135deg, #C7F464 0%, #FF6B6B 100%);
+            --soft-gradient: linear-gradient(135deg, #89F7FE 0%, #66A6FF 100%);
+            --warm-gradient: linear-gradient(135deg, #ff9900 0%, #FB8C00 100%);
+            --royal-gradient: linear-gradient(135deg, #8E24AA 0%, #BA68C8 100%);
+            --sunset-gradient: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%);
+            --ocean-gradient: linear-gradient(135deg, #A8EDEA 0%, #FED6E3 100%);
+            --forest-gradient: linear-gradient(135deg, #D299C2 0%, #FEF9D7 100%);
+            --sky-gradient: linear-gradient(135deg, #89F7FE 0%, #66A6FF 100%);
+            
+            /* Glass Effects */
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.37);
+            
+            /* Typography */
+            --primary-font: 'Poppins', sans-serif;
+            --secondary-font: 'Playfair Display', serif;
+            --code-font: 'Fira Code', monospace;
+            
+            /* Colors */
+            --text-primary: #2d3436;
+            --text-light: rgba(255, 255, 255, 0.9);
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: #0f0f23;
-            color: white;
+            font-family: var(--primary-font);
+            background: var(--primary-gradient);
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
-        /* Custom Cursor */
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-glass);
+            border-radius: 20px;
         }
 
-        .cursor-follower {
-            position: fixed;
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            transition: transform 0.2s ease;
+        .gradient-text {
+            background: linear-gradient(45deg, #ffffff00, #ffd90000, #ff6b6b00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite alternate;
         }
 
-        button, a, .clickable {
-            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="%23f093fb" opacity="0.9"/></svg>'), pointer !important;
-        }
+        
 
-        /* Animated Background */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: linear-gradient(45deg, #0f0f23, #1a1a2e, #16213e);
-            animation: gradientShift 8s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        /* Floating Particles */
-        .particles-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .particle-1 {
-            width: 4px;
-            height: 4px;
-            background: var(--primary);
-            animation: float1 6s ease-in-out infinite;
-        }
-
-        .particle-2 {
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            animation: float2 8s ease-in-out infinite;
-        }
-
-        .particle-3 {
-            width: 3px;
-            height: 3px;
-            background: var(--warning);
-            animation: float3 10s ease-in-out infinite;
-        }
-
-        @keyframes float1 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-            25% { transform: translateY(-100px) rotate(90deg); opacity: 1; }
-            50% { transform: translateY(-200px) rotate(180deg); opacity: 0.8; }
-            75% { transform: translateY(-100px) rotate(270deg); opacity: 1; }
-        }
-
-        @keyframes float2 {
-            0%, 100% { transform: translateX(0px) translateY(0px); opacity: 0.5; }
-            33% { transform: translateX(100px) translateY(-50px); opacity: 1; }
-            66% { transform: translateX(-50px) translateY(-100px); opacity: 0.8; }
-        }
-
-        @keyframes float3 {
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
-            50% { transform: scale(1.5) rotate(180deg); opacity: 1; }
-        }
-
-        /* Hero Section */
-        .hero {
+        /* Enhanced Hero Section */
+        .hero-section {
             min-height: 100vh;
+            background-image: url('images/2.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
             display: flex;
             align-items: center;
             position: relative;
-            background: transparent;
             overflow: hidden;
+            padding: 0;
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-particles::before {
+            content: '🎭 💼 👔 💛 😂 🎯 📚 💔 🏆 ✨';
+            position: absolute;
+            font-size: 2rem;
+            animation: float 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100vw); }
         }
 
         .hero-content {
             position: relative;
-            z-index: 10;
+            z-index: 2;
         }
 
-        .main-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 12vw, 8rem);
+        .hero-title {
+            font-family: var(--secondary-font);
+            font-size: clamp(3rem, 8vw, 7rem);
             font-weight: 900;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: textGradient 4s ease infinite, textFloat 3s ease-in-out infinite;
-            text-align: center;
-            letter-spacing: -2px;
-        }
-
-        @keyframes textGradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes textFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .subtitle-animated {
-            font-size: 2rem;
-            text-align: center;
             margin: 30px 0;
-            opacity: 0;
-            animation: slideInUp 1s ease 0.5s forwards;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-light);
+            margin: 20px auto;
+            max-width: 700px;
+            line-height: 1.6;
         }
 
-        /* Modern Cards */
-        .modern-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 30px;
-            margin: 20px 0;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            overflow: hidden;
+        .hero-badge {
+            display: inline-block;
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        .modern-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.6s ease;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
-        .modern-card:hover {
-            transform: translateY(-15px) rotateX(5deg);
-            box-shadow: 0 30px 60px rgba(102, 126, 234, 0.3);
-            border-color: rgba(255, 255, 255, 0.3);
+        .hero-stats {
+            max-width: 500px;
+            margin: 40px auto;
         }
 
-        .modern-card:hover::before {
-            left: 100%;
+        .hero-stats h3 {
+            color: #ffd700;
+            font-weight: 800;
         }
 
-        /* Scroll Triggered Animations */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .scroll-reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-reveal-left {
-            opacity: 0;
-            transform: translateX(-100px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .scroll-reveal-left.revealed {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scroll-reveal-right {
-            opacity: 0;
-            transform: translateX(100px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .scroll-reveal-right.revealed {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Interactive Elements */
-        .interactive-icon {
-            font-size: 4rem;
-            color: var(--primary);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .interactive-icon:hover {
-            color: var(--accent);
-            transform: rotateY(180deg) scale(1.2);
-        }
-
-        /* Modern Buttons */
-        .btn-futuristic {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
+        .btn-hero {
+            padding: 15px 35px;
             border: none;
-            color: white;
-            padding: 15px 40px;
             border-radius: 50px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
             position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
 
-        .btn-futuristic::before {
+        .btn-hero.primary {
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        .btn-hero.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        .btn-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.5s ease;
         }
 
-        .btn-futuristic:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
-            color: white;
-        }
-
-        .btn-futuristic:hover::before {
+        .btn-hero:hover::before {
             left: 100%;
         }
 
-        .btn-futuristic:active {
-            transform: translateY(-1px);
-        }
-
-        /* Countdown Animation */
-        .countdown-container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(30px);
-            border-radius: 30px;
-            padding: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .countdown-digit {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+        /* Countdown Section */
+        .countdown-section {
+            padding: 80px 0;
+            background: var(--primary-gradient);
             color: white;
+        }
+
+        .countdown-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 25px 15px;
             border-radius: 20px;
-            padding: 30px 20px;
             margin: 10px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffd700;
+        }
+
+        /* Personality Analysis */
+        .personality-grid {
+            padding: 80px 0;
+            background: var(--ocean-gradient);
+        }
+
+        .personality-card {
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            border: 2px solid transparent;
         }
 
-        .countdown-digit::before {
+        .personality-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: transform 0.6s ease;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
         }
 
-        .countdown-digit:hover {
-            transform: scale(1.1) rotateY(10deg);
+        .personality-card:hover {
+            transform: translateY(-15px) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            border-color: var(--accent-gradient);
         }
 
-        .countdown-digit:hover::before {
-            transform: rotate(45deg) translate(50%, 50%);
+        .personality-card:hover::before {
+            left: 100%;
         }
 
-        .digit-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        /* Gallery Enhanced */
+        /* Gallery Section */
         .gallery-section {
             padding: 100px 0;
-            position: relative;
+            background: var(--forest-gradient);
         }
 
         .gallery-grid {
@@ -382,112 +277,319 @@
 
         .gallery-item {
             position: relative;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
+            background: white;
             border-radius: 25px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
             cursor: pointer;
         }
 
         .gallery-item:hover {
-            transform: translateY(-20px) rotateZ(2deg) scale(1.02);
-            box-shadow: 0 30px 60px rgba(240, 147, 251, 0.3);
+            transform: translateY(-10px) rotateZ(2deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
         }
 
         .gallery-placeholder {
             height: 300px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-            background-size: 200% 200%;
-            animation: gradientShift 4s ease infinite;
+            background: var(--secondary-gradient);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: white;
+            font-size: 1.2rem;
             position: relative;
+            overflow: hidden;
         }
 
-        .photo-icon {
-            font-size: 3rem;
-            animation: iconBounce 2s ease-in-out infinite;
+        .gallery-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
-        @keyframes iconBounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        .gallery-item:hover .gallery-placeholder img {
+            transform: scale(1.1);
         }
 
-        /* Video Section Enhanced */
+        .gallery-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple 2s ease-in-out infinite;
+        }
+
+        @keyframes ripple {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 25px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-caption {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-upload-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .gallery-item:hover .gallery-upload-btn {
+            opacity: 1;
+        }
+
+        /* Video Section */
         .video-section {
             padding: 100px 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: var(--sky-gradient);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
         }
 
         .video-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
+            background: white;
             border-radius: 25px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
             position: relative;
         }
 
         .video-card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .video-placeholder {
+            height: 250px;
+            background: var(--primary-gradient);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-placeholder video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 80px;
             height: 80px;
-            border: 3px solid white;
+            background: rgba(255,255,255,0.2);
+            border: 3px solid rgba(255,255,255,0.5);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            color: white;
             transition: all 0.3s ease;
             cursor: pointer;
+            color: white;
+            z-index: 10;
+        }
+
+        .play-button:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: white;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-title-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .video-info {
+            padding: 25px;
+        }
+
+        .video-upload-area {
+            position: relative;
+            border: 2px dashed #ddd;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            background: rgba(255,255,255,0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-upload-area:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            transform: scale(1.02);
+        }
+
+        /* Birthday Gift Section */
+        .birthday-gift-section {
+            padding: 100px 0;
+            background: var(--royal-gradient);
+            color: white;
+        }
+
+        .gift-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
             position: relative;
             overflow: hidden;
         }
 
-        .play-button::before {
+        .gift-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255,215,0,0.1), transparent);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .gift-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .gift-icon {
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .gift-photo-placeholder {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .gift-photo-placeholder img {
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .btn-gift {
+            background: var(--warm-gradient);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gift:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 167, 38, 0.4);
+            color: white;
+        }
+
+        .btn-gift::after {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             width: 0;
             height: 0;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.3);
             border-radius: 50%;
-            transition: all 0.3s ease;
             transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
         }
 
-        .play-button:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        .btn-gift:hover::after {
+            width: 300px;
+            height: 300px;
         }
 
-        .play-button:hover::before {
-            width: 200%;
-            height: 200%;
+        /* Birthday Wishes Section */
+        .wishes-section {
+            padding: 80px 0;
+            background: var(--sunset-gradient);
         }
 
         /* Section Titles */
         .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-family: var(--secondary-font);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             text-align: center;
-            margin-bottom: 60px;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 50px;
+            color: var(--text-primary);
             position: relative;
         }
 
@@ -499,22 +601,52 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
+            background: var(--accent-gradient);
             border-radius: 2px;
-            animation: lineGrow 1s ease-in-out;
         }
 
-        @keyframes lineGrow {
-            from { width: 0; }
-            to { width: 100px; }
+        /* Modern Button */
+        .btn-modern {
+            background: var(--primary-gradient);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Floating Action Button */
-        .fab-container {
+        .btn-modern:hover {
+            transform: translateY(-3px);
+            color: white;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-modern:hover::before {
+            left: 100%;
+        }
+
+        /* Floating Action Buttons */
+        .floating-actions {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 1000;
+            display: flex;
+            flex-direction: column;
         }
 
         .fab {
@@ -525,225 +657,475 @@
             color: white;
             font-size: 1.5rem;
             margin: 10px 0;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .fab::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
             transition: all 0.3s ease;
-            transform: translate(-50%, -50%);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
         }
 
         .fab:hover {
-            transform: scale(1.15) rotate(10deg);
-        }
-
-        .fab:hover::before {
-            width: 200%;
-            height: 200%;
+            transform: scale(1.1);
+            color: white;
         }
 
         .fab-primary {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            background: var(--primary-gradient);
         }
 
-        .fab-accent {
-            background: linear-gradient(45deg, var(--accent), var(--warning));
+        .fab-success {
+            background: var(--secondary-gradient);
         }
 
-        /* Mouse Trail Effect */
-        .mouse-trail {
-            position: fixed;
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9997;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
+        .fab-danger {
+            background: var(--warm-gradient);
         }
 
-        /* Scroll Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            z-index: 9999;
-            transition: width 0.1s ease;
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 25px;
+            border: none;
+            overflow: hidden;
         }
 
-        /* Loading Screen */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0f0f23;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 0.5s ease;
+        .modal-header {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
         }
 
-        .loading-spinner {
-            width: 80px;
-            height: 80px;
-            border: 4px solid rgba(102, 126, 234, 0.3);
-            border-top: 4px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .main-title {
-                font-size: 3rem;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .fab-container {
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .modern-card {
-                padding: 20px;
-            }
+            .personality-card { padding: 25px; }
+            .hero-title { font-size: 3rem; }
+            .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
+            .video-grid { grid-template-columns: 1fr; gap: 20px; }
+            .floating-actions { bottom: 20px; right: 20px; }
+            .fab { width: 50px; height: 50px; font-size: 1.2rem; }
+            .btn-hero { margin: 10px 0; display: block; }
         }
 
-        /* Hide scrollbar but keep functionality */
-        ::-webkit-scrollbar {
-            width: 8px;
+        /* Heart Float Animation */
+        @keyframes heartFloat {
+            to {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
+        /* Enhanced Mobile Responsiveness */
+@media (max-width: 991.98px) {
+    /* Hero Section Mobile Optimizations */
+    .hero-section {
+        min-height: 80vh;
+        padding: 40px 0;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 4rem);
+        line-height: 1.1;
+        margin: 20px 0;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 4vw, 1.4rem);
+        padding: 0 15px;
+        margin: 15px 0;
+    }
+    
+    .hero-stats {
+        margin: 30px 0;
+        padding: 20px !important;
+    }
+    
+    .hero-stats .col-4 h3 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-stats .col-4 small {
+        font-size: 0.8rem;
+    }
+    
+    /* Button Improvements */
+    .btn-hero {
+        width: 100%;
+        margin: 10px 0;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .btn-modern, .btn-gift {
+        width: 100%;
+        margin: 10px 0;
+        padding: 12px 25px;
+    }
+    
+    /* Countdown Section */
+    .countdown-section {
+        padding: 60px 0;
+    }
+    
+    .countdown-box {
+        margin: 10px 5px;
+        padding: 20px 10px;
+    }
+    
+    .countdown-number {
+        font-size: 2.2rem;
+    }
+    
+    /* Section Titles */
+    .section-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+    
+    /* Personality Cards */
+    .personality-grid {
+        padding: 60px 0;
+    }
+    
+    .personality-card {
+        padding: 25px 20px;
+        margin-bottom: 25px;
+    }
+    
+    /* Gallery and Video Grids */
+    .gallery-grid, .video-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-top: 30px;
+    }
+    
+    .gallery-section, .video-section {
+        padding: 60px 0;
+    }
+    
+    /* Gallery Items */
+    .gallery-item, .video-card {
+        margin-bottom: 20px;
+    }
+    
+    .gallery-placeholder {
+        height: 250px;
+    }
+    
+    .video-placeholder {
+        height: 200px;
+    }
+    
+    /* Floating Action Buttons */
+    .floating-actions {
+        bottom: 20px;
+        right: 15px;
+    }
+    
+    .fab {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+        margin: 8px 0;
+    }
+    
+    /* Modal Adjustments */
+    .modal-dialog {
+        margin: 20px auto;
+        max-width: 95%;
+    }
+    
+    .modal-dialog.modal-lg,
+    .modal-dialog.modal-xl {
+        max-width: 95%;
+    }
+    
+    /* Gift Section */
+    .birthday-gift-section {
+        padding: 60px 0;
+    }
+    
+    .gift-wrapper {
+        padding: 30px 20px !important;
+        margin: 0 15px;
+    }
+    
+    .gift-icon {
+        font-size: 3rem;
+    }
+    
+    .gift-photo-placeholder {
+        padding: 25px 15px;
+        margin: 20px 0;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 40px 0;
+    }
+    
+    footer .row .col-lg-4 {
+        margin-bottom: 20px;
+    }
+    
+    /* Form Elements */
+    .form-control {
+        padding: 12px 15px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .form-label {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    /* Video Upload Area */
+    .video-upload-area {
+        height: 200px;
+        padding: 20px;
+    }
+    
+    .video-upload-area i {
+        font-size: 2.5rem !important;
+    }
+    
+    /* Wishes Section */
+    .wishes-section {
+        padding: 60px 0;
+    }
+    
+    .wishes-section .col-lg-8 {
+        padding: 0 15px;
+    }
+}
 
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-        }
+/* Extra Small Devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: clamp(1.8rem, 10vw, 3rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    }
+    
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+    
+    .countdown-box {
+        padding: 15px 8px;
+    }
+    
+    .personality-card {
+        padding: 20px 15px;
+    }
+    
+    .gallery-placeholder,
+    .video-placeholder {
+        height: 200px;
+    }
+    
+    .section-title {
+        font-size: clamp(1.5rem, 8vw, 2rem);
+    }
+    
+    .fab {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .floating-actions {
+        right: 10px;
+        bottom: 15px;
+    }
+    
+    /* Ensure text doesn't overflow */
+    h1, h2, h3, h4, h5, h6 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* Gallery caption text smaller */
+    .gallery-caption h6,
+    .video-info h6 {
+        font-size: 0.9rem;
+    }
+    
+    .gallery-caption p,
+    .video-info p {
+        font-size: 0.8rem;
+    }
+}
 
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            border-radius: 4px;
-        }
+/* Landscape phone orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 100vh;
+    }
+    
+    .countdown-section,
+    .personality-grid,
+    .gallery-section,
+    .video-section,
+    .birthday-gift-section,
+    .wishes-section {
+        padding: 50px 0;
+    }
+}
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, var(--accent), var(--primary));
-        }
+/* General responsive utilities */
+.w-100-mobile {
+    width: 100% !important;
+}
+
+.text-center-mobile {
+    text-align: center !important;
+}
+
+.p-mobile {
+    padding: 15px !important;
+}
+
+.m-mobile {
+    margin: 15px 0 !important;
+}
+
+/* Fix for overflow issues */
+body {
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Ensure all images are responsive */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent horizontal scroll */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col-lg-4, .col-lg-8, .col-3 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Touch-friendly interactive elements */
+.gallery-item,
+.video-card,
+.personality-card,
+.btn {
+    touch-action: manipulation;
+}
+
+/* Improve tap targets for mobile */
+.play-button {
+    min-width: 60px;
+    min-height: 60px;
+}
+
+.gallery-upload-btn {
+    min-width: 44px;
+    min-height: 44px;
+}
+
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div>
-            <div class="loading-spinner"></div>
-            <p style="margin-top: 20px; font-size: 1.2rem;">Loading Loki mams's Roast...</p>
-        </div>
-    </div>
-
-    <!-- Scroll Progress Bar -->
-    <div class="progress-bar" id="progressBar"></div>
-
-    <!-- Custom Cursors -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursorFollower"></div>
-
-    <!-- Animated Background -->
-    <div class="animated-bg"></div>
-
-    <!-- Floating Particles -->
-    <div class="particles-container" id="particlesContainer"></div>
-
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Enhanced Hero Section -->
+    <section class="hero-section">
+        <div class="hero-particles"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1 class="main-title">LOKESH Loki mams</h1>
-                <p class="subtitle-animated">The Living Contradiction! 🎭</p>
+            <div class="hero-content text-center text-white">
+                <!--<div class="hero-badge mb-4">
+                    <span class="glass px-4 py-2 rounded-pill">🎭 The Living Paradox</span>
+                </div>
+                 <h1 class="hero-title">
+                    <span class="gradient-text">LOKESH Loki mams</span>
+                </h1>
                 
-                <div class="row mt-5">
-                    <div class="col-lg-6 scroll-reveal-left">
-                        <div class="modern-card">
-                            <div class="interactive-icon mb-3">
-                                <i class="fas fa-crown"></i>
-                            </div>
-                            <h4>🎯 What He Thinks He Is:</h4>
-                            <p class="fs-5">"Ultimate Playboy, Business Mastermind, Style Icon"</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 scroll-reveal-right">
-                        <div class="modern-card">
-                            <div class="interactive-icon mb-3">
-                                <i class="fas fa-heart-broken"></i>
-                            </div>
-                            <h4>😂 What We All Know:</h4>
-                            <p class="fs-5">"Soft-hearted Mama's Boy with Engineering Backlogs"</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-5 scroll-reveal">
-                    <button class="btn-futuristic clickable" onclick="startPersonalityRoast()">
-                        <i class="fas fa-fire"></i> Begin The Ultimate Roast! <i class="fas fa-fire"></i>
-                    </button>
-                </div>
+                -->
+                
+               
+            
+                
+                
+                
             </div>
         </div>
     </section>
 
     <!-- Countdown Section -->
-    <section class="py-5" id="countdownSection">
+    <section class="countdown-section">
         <div class="container">
-            <div class="countdown-container scroll-reveal">
-                <h2 class="section-title">⏰ Countdown to Loki mams's Day!</h2>
-                <div class="row text-center" id="countdown">
-                    <div class="col-3">
-                        <div class="countdown-digit clickable">
-                            <span class="digit-number" id="days">00</span>
-                            <span>Days</span>
+            
+            <p class="hero-subtitle">
+                    From confident poses to cringe moments - celebrating our favorite beautiful contradiction! 
+                </p>
+                
+                <div class="hero-stats glass p-4 rounded-4 my-5">
+                    <div class="row">
+                        <div class="col-4">
+                            <h3 class="mb-0">∞</h3>
+                            <small>Confidence Level</small>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="mb-0">100%</h3>
+                            <small>Style Game</small>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="mb-0">💛</h3>
+                            <small>Heart Size</small>
                         </div>
                     </div>
-                    <div class="col-3">
-                        <div class="countdown-digit clickable">
-                            <span class="digit-number" id="hours">00</span>
-                            <span>Hours</span>
-                        </div>
+                </div>
+                
+                
+            <h2 class="text-center mb-5">⏰ Countdown to Loki mams's Birthday Celebration!</h2>
+            <div class="row text-center" id="countdown">
+                <div class="col-3">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="days">00</div>
+                        <div>Days</div>
                     </div>
-                    <div class="col-3">
-                        <div class="countdown-digit clickable">
-                            <span class="digit-number" id="minutes">00</span>
-                            <span>Minutes</span>
-                        </div>
+                </div>
+                <div class="col-3">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div>Hours</div>
                     </div>
-                    <div class="col-3">
-                        <div class="countdown-digit clickable">
-                            <span class="digit-number" id="seconds">00</span>
-                            <span>Seconds</span>
-                        </div>
+                </div>
+                <div class="col-3">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div>Minutes</div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div>Seconds</div>
                     </div>
                 </div>
             </div>
@@ -751,46 +1133,46 @@
     </section>
 
     <!-- Personality Analysis -->
-    <section class="py-5">
+    <section class="personality-grid">
         <div class="container">
-            <h2 class="section-title scroll-reveal">🧠 The Lokesh Loki mams Analysis 🧠</h2>
+            <h2 class="section-title">🧠 The Lokesh Loki mams Personality Analysis</h2>
             
             <div class="row">
-                <div class="col-lg-4 scroll-reveal" style="transition-delay: 0.1s;">
-                    <div class="modern-card">
-                        <div class="interactive-icon text-center mb-3">
-                            <i class="fas fa-crown"></i>
+                <div class="col-lg-4">
+                    <div class="personality-card fade-in-up">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-crown fa-3x" style="color: #f39c12;"></i>
                         </div>
                         <h4>The Confidence Paradox</h4>
                         <p>Loki mams is the most confident person you'll ever meet... until someone actually challenges him! Then our "Mass Mama" becomes "Cry Baby Loki mams" faster than his engineering grades dropped! 😂</p>
-                        <div class="text-center mt-3">
-                            <span class="badge bg-warning px-3 py-2">Confidence: 100% | Reality: 0%</span>
+                        <div class="text-center">
+                            <span class="badge bg-warning">Confidence: 100% | Reality Check: 0%</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 scroll-reveal" style="transition-delay: 0.2s;">
-                    <div class="modern-card">
-                        <div class="interactive-icon text-center mb-3">
-                            <i class="fas fa-heart-broken"></i>
+                <div class="col-lg-4">
+                    <div class="personality-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-heart-broken fa-3x" style="color: #e74c3c;"></i>
                         </div>
                         <h4>The Soft-Hearted "Tough Guy"</h4>
                         <p>Claims to be a playboy but cries when someone hurts his feelings! Our Loki mams has the heart of a teddy bear wrapped in the dreams of a tiger! Even revenge is too mean for this sweet soul! 🧸</p>
-                        <div class="text-center mt-3">
-                            <span class="badge bg-danger px-3 py-2">Toughness: 10% | Softness: 200%</span>
+                        <div class="text-center">
+                            <span class="badge bg-danger">Toughness: 10% | Softness: 200%</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 scroll-reveal" style="transition-delay: 0.3s;">
-                    <div class="modern-card">
-                        <div class="interactive-icon text-center mb-3">
-                            <i class="fas fa-graduation-cap"></i>
+                <div class="col-lg-4">
+                    <div class="personality-card fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-graduation-cap fa-3x" style="color: #e17055;"></i>
                         </div>
                         <h4>Business Mind vs Engineering Reality</h4>
                         <p>Dreams of becoming the next big business tycoon while his engineering backlogs pile up like his unrequited crushes! Loki mams's business plans are as successful as his love life! 📚💔</p>
-                        <div class="text-center mt-3">
-                            <span class="badge bg-info px-3 py-2">Dreams: ∞ | Reality: 40%</span>
+                        <div class="text-center">
+                            <span class="badge bg-info">Business Dreams: ∞ | Cleared Subjects: 40%</span>
                         </div>
                     </div>
                 </div>
@@ -798,79 +1180,214 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Photo Gallery Section -->
     <section class="gallery-section">
         <div class="container">
-            <h2 class="section-title scroll-reveal">📸 Loki mams's Hall of Fame 📸</h2>
-            <p class="text-center fs-5 mb-4 scroll-reveal">From confidence poses to cringe moments - capturing Loki mams's journey! 😂</p>
+            <h2 class="section-title">📸 Loki mams's Hall of Fame Gallery</h2>
+            <p class="text-center fs-5 mb-4">From confidence poses to cringe moments - capturing Loki mams's journey through life! 😂</p>
             
-            <div class="text-center mb-4 scroll-reveal">
-                <button class="btn-futuristic me-3 clickable" onclick="openUploadModal()">
+            <div class="text-center mb-4">
+                <button class="btn btn-modern me-3" onclick="openUploadModal('photo')">
                     <i class="fas fa-plus"></i> Add Photos
                 </button>
-                <button class="btn-futuristic clickable" onclick="viewSlideshow()">
+                <button class="btn btn-modern" onclick="openGalleryFullscreen()">
                     <i class="fas fa-expand"></i> View Slideshow
                 </button>
             </div>
-
+            
             <div class="gallery-grid">
-                <div class="gallery-item scroll-reveal clickable">
-                    <div class="gallery-placeholder">
+                <!-- Photo Upload Area -->
+                <div class="gallery-item">
+                    <div class="gallery-placeholder" onclick="openUploadModal('photo')">
                         <div class="text-center">
-                            <i class="fas fa-camera photo-icon mb-3"></i>
-                            <h5>The Business Meeting Look</h5>
-                            <p>When Loki mams thought he was in a board meeting</p>
+                            <i class="fas fa-camera fa-4x mb-3"></i>
+                            <h5>Upload Loki mams's Epic Moment</h5>
+                            <p>Click to add your favorite Loki mams photo!</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="gallery-item scroll-reveal clickable" style="transition-delay: 0.1s;">
-                    <div class="gallery-placeholder">
-                        <div class="text-center">
-                            <i class="fas fa-tshirt photo-icon mb-3"></i>
-                            <h5>Fashion Icon Moment</h5>
-                            <p>Loki mams's unmatched style game!</p>
-                        </div>
+                    <div class="gallery-caption">
+                        <h6>📱 Add New Memory</h6>
+                        <p class="text-muted">Share Loki mams's funniest moments!</p>
                     </div>
                 </div>
-                
-                <div class="gallery-item scroll-reveal clickable" style="transition-delay: 0.2s;">
+
+                <!-- Photo 1: Deep Discussion About Company -->
+                <div class="gallery-item">
                     <div class="gallery-placeholder">
-                        <div class="text-center">
-                            <i class="fas fa-heart-broken photo-icon mb-3"></i>
-                            <h5>The "Thinking About K" Face</h5>
-                            <p>Lost in thought about his mystery crush</p>
-                        </div>
+                        <img src="images/1.jpg" alt="Deep Discussion About Company" class="img-fluid">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>The Business Mastermind</h5>
+                        <p>Loki mams discussing company strategies like he owns Fortune 500! The confidence is unreal! 💼</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>💼 CEO Mode Loki mams</h6>
+                        <p class="text-muted">Business planning at its finest!</p>
                     </div>
                 </div>
-                
-                <div class="gallery-item scroll-reveal clickable" style="transition-delay: 0.3s;">
+
+                <!-- Photo 2: Mall Tour -->
+                <div class="gallery-item">
                     <div class="gallery-placeholder">
-                        <div class="text-center">
-                            <i class="fas fa-laugh photo-icon mb-3"></i>
-                            <h5>Happy Cringe Post</h5>
-                            <p>Loki mams being genuinely happy with his content</p>
-                        </div>
+                        <img src="images/2.jpg" alt="Mall Tour" class="img-fluid">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Shopping King Loki mams</h5>
+                        <p>Loki mams strutting through the mall like he owns it! Peak confidence energy! 🛍️</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>🛍️ Mall Explorer</h6>
+                        <p class="text-muted">Loki mams's retail therapy session!</p>
                     </div>
                 </div>
-                
-                <div class="gallery-item scroll-reveal clickable" style="transition-delay: 0.4s;">
+
+                <!-- Photo 3: Shitty Sitting -->
+                <div class="gallery-item">
                     <div class="gallery-placeholder">
-                        <div class="text-center">
-                            <i class="fas fa-users photo-icon mb-3"></i>
-                            <h5>Gang's Favorite Target</h5>
-                            <p>Group photo where everyone's trolling Loki mams</p>
-                        </div>
+                        <img src="images/3.jpg" alt="Shitty Sitting" class="img-fluid">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Comfort Master Loki mams</h5>
+                        <p>Loki mams's revolutionary sitting technique! Comfort over everything! 😂🪑</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>🪑 Relaxation Expert</h6>
+                        <p class="text-muted">Redefining comfort standards!</p>
                     </div>
                 </div>
-                
-                <div class="gallery-item scroll-reveal clickable" style="transition-delay: 0.5s;">
+
+                <!-- Photo 4: Sighting Girls -->
+                <div class="gallery-item">
                     <div class="gallery-placeholder">
-                        <div class="text-center">
-                            <i class="fas fa-plus photo-icon mb-3"></i>
-                            <h5>Add New Memory</h5>
-                            <p>Upload Loki mams's epic moments!</p>
-                        </div>
+                        <img src="images/4.jpg" alt="Sighting Girls" class="img-fluid">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>The Observer Loki mams</h5>
+                        <p>Classic Loki mams moment - confidence meets reality! The gap is hilarious! 👀😅</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>👀 Reality Check</h6>
+                        <p class="text-muted">When dreams meet real world!</p>
+                    </div>
+                </div>
+
+                <!-- Photo 5: Traditional Kalakals -->
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <img src="images/5.jpg" alt="Traditional Kalakals" class="img-fluid">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Cultural Loki mams</h5>
+                        <p>Loki mams embracing traditions with his signature style and confidence! ✨🕉️</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>🕉️ Traditional Mode</h6>
+                        <p class="text-muted">Cultural Loki mams is best Loki mams!</p>
+                    </div>
+                </div>
+
+                <!-- Photo 6: Weird Pose with Creativity and Dark -->
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <img src="images/62.jpg" alt="Weird Pose with Creativity and Dark" class="img-fluid">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Artistic Genius Loki mams</h5>
+                        <p>Loki mams's creative dark photography phase - mysterious and stylish! 📸🎭</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>🎭 Creative Artist</h6>
+                        <p class="text-muted">Loki mams's experimental photography!</p>
+                    </div>
+                </div>
+
+                <!-- Photo 7: Talking with GF but Reality is Different -->
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <img src="images/7.jpg" alt="Talking with GF but Reality is Different" class="img-fluid">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Reality vs Expectation</h5>
+                        <p>Loki mams's confident phone conversation vs the actual situation! The gap is real! 📞😂</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>📞 Confidence Call</h6>
+                        <p class="text-muted">Loki mams's version of events!</p>
+                    </div>
+                </div>
+
+                <!-- Photo 8: Wearing Saree -->
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <img src="images/8.jpg" alt="Wearing Saree" class="img-fluid">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Fashion Experiment Loki mams</h5>
+                        <p>Loki mams trying saree - peak confidence and style experimentation! Bold move! 👗✨</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>👗 Fashion Explorer</h6>
+                        <p class="text-muted">Loki mams breaking fashion barriers!</p>
+                    </div>
+                </div>
+
+                <!-- Photo 9: With His Old GF -->
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <img src="images/9.jpg" alt="With His Old GF" class="img-fluid">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Memory Lane Loki mams</h5>
+                        <p>Loki mams with his ex - proof that our soft-hearted guy was once in love! 💕📷</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>💕 Past Memories</h6>
+                        <p class="text-muted">Loki mams's romantic history!</p>
+                    </div>
+                </div>
+
+                <!-- Photo 10: Eyes Plucked -->
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <img src="images/10.jpg" alt="Eyes Plucked" class="img-fluid">
+                        <button class="gallery-upload-btn" onclick="openUploadModal('photo')">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h5>Drama King Loki mams</h5>
+                        <p>Loki mams's most dramatic expression! Peak emotional Loki mams moment! 🎭😱</p>
+                    </div>
+                    <div class="gallery-caption">
+                        <h6>🎭 Drama Master</h6>
+                        <p class="text-muted">Loki mams's theatrical side!</p>
                     </div>
                 </div>
             </div>
@@ -880,54 +1397,257 @@
     <!-- Video Section -->
     <section class="video-section">
         <div class="container">
-            <h2 class="section-title scroll-reveal">🎬 Loki mams's Viral Moments 🎬</h2>
-            <p class="text-center fs-5 mb-4 scroll-reveal">The videos that capture Loki mams's essence! 📹</p>
+            <h2 class="section-title text-white">🎬 Loki mams's Viral Moments Collection</h2>
+            <p class="text-center text-white fs-5 mb-4">The legendary videos that define Loki mams's personality - from confidence to pure chaos! 📹</p>
             
-            <div class="row">
-                <div class="col-lg-4 scroll-reveal">
-                    <div class="video-card mb-4">
-                        <div class="gallery-placeholder d-flex flex-column align-items-center justify-content-center">
-                            <div class="play-button clickable" onclick="playVideo('confidence')">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <h5 class="mt-3">The Confidence Speech</h5>
-                            <p>Loki mams explaining why he's a playboy</p>
-                        </div>
-                        <div class="p-3">
-                            <h6><i class="fas fa-crown"></i> Epic Cringe Level</h6>
-                            <p>Watch Loki mams's motivational speech about dating! 😂</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 scroll-reveal" style="transition-delay: 0.1s;">
-                    <div class="video-card mb-4">
-                        <div class="gallery-placeholder d-flex flex-column align-items-center justify-content-center">
-                            <div class="play-button clickable" onclick="playVideo('style')">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <h5 class="mt-3">Fashion Show Loki mams</h5>
-                            <p>Loki mams's style transformation</p>
-                        </div>
-                        <div class="p-3">
-                            <h6><i class="fas fa-tshirt"></i> Actually Fire!</h6>
-                            <p>We can't roast this - he looks amazing! ✨</p>
+            <div class="text-center mb-4">
+                <button class="btn btn-modern me-3" onclick="openUploadModal('video')">
+                    <i class="fas fa-video"></i> Upload Videos
+                </button>
+                <button class="btn btn-modern" onclick="createVideoPlaylist()">
+                    <i class="fas fa-play-circle"></i> Create Playlist
+                </button>
+            </div>
+
+            <div class="video-grid">
+                <!-- Video Upload Area -->
+                <div class="video-card">
+                    <div class="video-upload-area" onclick="openUploadModal('video')" ondrop="handleVideoDrop(event)" ondragover="handleDragOver(event)">
+                        <i class="fas fa-cloud-upload-alt fa-4x mb-3" style="color: #667eea;"></i>
+                        <h5>Drag & Drop Videos Here</h5>
+                        <p>Or click to browse and upload Loki mams's epic moments!</p>
+                        <div class="mt-3">
+                            <small class="text-muted">Supported: MP4, AVI, MOV (Max: 100MB)</small>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 scroll-reveal" style="transition-delay: 0.2s;">
-                    <div class="video-card mb-4">
-                        <div class="gallery-placeholder d-flex flex-column align-items-center justify-content-center">
-                            <div class="play-button clickable" onclick="playVideo('crying')">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <h5 class="mt-3">The Emotional Moment</h5>
-                            <p>When someone was mean to Loki mams</p>
+
+                <!-- Video 1: Drowsy Mama -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <video poster="thumbnails/drowsy_mama.jpg">
+                            <source src="videos/1.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-button" onclick="playVideoFile('videos/1.mp4')">
+                            <i class="fas fa-play"></i>
                         </div>
-                        <div class="p-3">
-                            <h6><i class="fas fa-heart"></i> Pure Emotions</h6>
-                            <p>This is why we love him! 💛</p>
+                        <div class="video-title-overlay">
+                            <h5>😴 Drowsy Mama</h5>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-bed"></i> The Sleepy Legend</h6>
+                        <p>Loki mams in his natural state - half asleep but still maintaining that legendary confidence! 😂</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">Pure Loki mams</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 1:30 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2: Weird Exercise Mama -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <video poster="thumbnails/weird_exercise.jpg">
+                            <source src="videos/2.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-button" onclick="playVideoFile('videos/2.mp4')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title-overlay">
+                            <h5>🏃‍♂️ Weird Exercise Mama</h5>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-dumbbell"></i> Fitness Guru Loki mams</h6>
+                        <p>Loki mams's revolutionary approach to fitness - definitely one of a kind! Innovation at its peak! 💪</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Creative Genius</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 2:15 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3: Slipper Collecting Out of Train -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <video poster="thumbnails/slipper_collecting.jpg">
+                            <source src="videos/3.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-button" onclick="playVideoFile('videos/3.mp4')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title-overlay">
+                            <h5>🚂 Slipper Collecting Out of Train</h5>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-train"></i> The Great Rescue</h6>
+                        <p>Loki mams's heroic slipper rescue mission! Peak problem-solving skills and dedication! 👡🦸‍♂️</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">Hero Moment</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 0:45 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4: Pokie Mama -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <video poster="thumbnails/pokie_mama.jpg">
+                            <source src="videos/4.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-button" onclick="playVideoFile('videos/4.mp4')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title-overlay">
+                            <h5>🎰 Pokie Mama</h5>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-dice"></i> Luck Master Loki mams</h6>
+                        <p>Loki mams trying his luck at games - confidence is his ultimate superpower! 🎲✨</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info">Risk Taker</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 1:20 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 5: Fit Check -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <video poster="thumbnails/fit_check.jpg">
+                            <source src="videos/5.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-button" onclick="playVideoFile('videos/5.mp4')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title-overlay">
+                            <h5>✨ Fit Check</h5>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-tshirt"></i> Style Icon</h6>
+                        <p>This one's actually fire! Loki mams's fashion game is genuinely unmatched! We can't roast perfection! 👔</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">Actually Perfect</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 1:50 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 6: Eating a Big Bucket -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <video poster="thumbnails/big_bucket.jpg">
+                            <source src="videos/6.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-button" onclick="playVideoFile('videos/6.mp4')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title-overlay">
+                            <h5>🪣 Eating a Big Bucket</h5>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-utensils"></i> Food Champion</h6>
+                        <p>Loki mams taking on the ultimate food challenge! Appetite of a true champion! 🍽️🏆</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Legendary</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 3:10 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 7: Archery but Target is a Mess -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <video poster="thumbnails/archery_mess.jpg">
+                            <source src="videos/7.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-button" onclick="playVideoFile('videos/7.mp4')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title-overlay">
+                            <h5>🏹 Archery but Target is a Mess</h5>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-bullseye"></i> Precision Master</h6>
+                        <p>Loki mams's unique approach to archery - creativity over accuracy! The results are hilarious! 🎯😂</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-danger">Epic Fail</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 2:30 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 8: Bowled Complete 10 -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <video poster="thumbnails/bowling_10.jpg">
+                            <source src="videos/8.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-button" onclick="playVideoFile('videos/8.mp4')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title-overlay">
+                            <h5>🎳 Bowled Complete 10</h5>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-bowling-ball"></i> Strike Master</h6>
+                        <p>Loki mams actually nailing a perfect 10! Sometimes confidence pays off! This is genuinely impressive! 🎳✨</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">Actually Good</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 1:15 mins</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 9: Taking Vid of Girls 
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <video poster="thumbnails/taking_vid.jpg">
+                            <source src="videos/taking_vid_girls.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-button" onclick="playVideoFile('videos/taking_vid_girls.mp4')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title-overlay">
+                            <h5>📹 Taking Vid of Girls</h5>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-video"></i> Content Creator</h6>
+                        <p>Loki mams trying to be smooth with his video skills - confidence meets reality again! 📱😅</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Smooth Operator</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 1:40 mins</small>
+                        </div>
+                    </div>
+                </div>-->
+
+                <!-- Video 10: Talking About K -->
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <video poster="thumbnails/talking_k.jpg">
+                            <source src="videos/9.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-button" onclick="playVideoFile('videos/9.mp4')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-title-overlay">
+                            <h5>💕 Talking About X</h5>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h6><i class="fas fa-heart"></i> The X Mystery</h6>
+                        <p>Rare footage of Loki mams opening up about his feelings. Still won't reveal who "X" is, but the emotions are real! 💕🤫</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-danger">Top Secret</span>
+                            <small class="text-muted"><i class="far fa-clock"></i> 2:50 mins</small>
                         </div>
                     </div>
                 </div>
@@ -935,25 +1655,72 @@
         </div>
     </section>
 
-    <!-- Birthday Wishes -->
-    <section class="py-5">
+    <!-- Special Birthday Gift Section -->
+    <section class="birthday-gift-section">
         <div class="container">
-            <h2 class="section-title scroll-reveal">💝 Birthday Wishes for Loki mams 💝</h2>
+            <div class="gift-wrapper glass p-5 rounded-4">
+                <div class="text-center mb-4">
+                    <div class="gift-icon">
+                        <i class="fas fa-gift fa-5x "></i>
+                    </div>
+                    <h2 class=" mt-3">🎁 Special Birthday Surprise!</h2>
+                    <p class="fs-4">For Loki mams's most precious moment...</p>
+                </div>
+                
+                <div class="gift-content">
+                    <div class="gift-photo-placeholder">
+                        <div class="text-center" id="giftPhotoContent">
+                            <i class="fas fa-heart fa-4x mb-3" style="color: #FF6B6B;"></i>
+                            <h4>Loki mams with His New GF 💕</h4>
+                            <p class="fs-5">The moment we've all been waiting for! Our Loki mams finally found his perfect match! 🥰</p>
+                            
+                            <button class="btn-gift" onclick="revealGiftPhoto()">
+                                <i class="fas fa-unlock"></i> Reveal the Magic ✨
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gift-message mt-4 p-4 rounded-3" style="background: var(--soft-gradient); color: white;">
+                        <h5 class="text-center">💌 Our Birthday Message</h5>
+                        <p class="text-center fs-5">
+                            "Happy Birthday Mama! From confident poses to finding true love - 
+                            you've shown us that being genuine and staying true to yourself 
+                            always wins in the end! Here's to your happiness! 🎂💛"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Wishes Section -->
+    <section class="wishes-section">
+        <div class="container">
+            <h2 class="section-title">💝 Birthday Love & Roasts for Loki mams</h2>
             
             <div class="row justify-content-center">
-                <div class="col-lg-8 scroll-reveal">
-                    <div class="modern-card">
+                <div class="col-lg-8">
+                    <div class="personality-card">
                         <form id="wishForm">
-                            <div class="mb-4">
+                            <div class="mb-3">
                                 <label class="form-label fw-bold">Your Name</label>
-                                <input type="text" class="form-control" id="wishName" required style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white;">
+                                <input type="text" class="form-control" id="wishName" required>
                             </div>
-                            <div class="mb-4">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Message Type</label>
+                                <select class="form-control" id="messageType">
+                                    <option>Loving Roast 😂💛</option>
+                                    <option>Pure Love 💛</option>
+                                    <option>Savage Truth 🔥</option>
+                                    <option>Motivational (With Love) 💪</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label fw-bold">Your Message for Loki mams</label>
-                                <textarea class="form-control" id="wishMessage" rows="4" placeholder="Write your birthday message..." required style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white;"></textarea>
+                                <textarea class="form-control" id="wishMessage" rows="4" placeholder="Write your birthday message..." required></textarea>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn-futuristic">
+                                <button type="submit" class="btn btn-modern">
                                     <i class="fas fa-heart"></i> Send Love & Roast!
                                 </button>
                             </div>
@@ -969,132 +1736,101 @@
     </section>
 
     <!-- Floating Action Buttons -->
-    <div class="fab-container">
-        <button class="fab fab-primary clickable" onclick="scrollToTop()" title="Back to Top">
+    <div class="floating-actions">
+        <button class="fab fab-primary" onclick="scrollToTop()" title="Back to Top">
             <i class="fas fa-arrow-up"></i>
         </button>
-        <button class="fab fab-accent clickable" onclick="openUploadModal()" title="Add Memory">
-            <i class="fas fa-plus"></i>
+        <button class="fab fab-success" onclick="openUploadModal('photo')" title="Add Photo">
+            <i class="fas fa-camera"></i>
+        </button>
+        <button class="fab fab-danger" onclick="openUploadModal('video')" title="Add Video">
+            <i class="fas fa-video"></i>
         </button>
     </div>
 
+    <!-- Upload Modal -->
+    <div class="modal fade" id="uploadModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">📸 Add Loki mams's Memory</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <div id="uploadPreview" class="mb-3"></div>
+                        <input type="file" id="fileInput" class="d-none" accept="image/*,video/*" onchange="previewFile(this)">
+                        <button class="btn btn-modern" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-plus"></i> Choose File
+                        </button>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Title</label>
+                        <input type="text" class="form-control" id="uploadTitle" placeholder="Give this memory a funny title...">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Description</label>
+                        <textarea class="form-control" id="uploadDescription" rows="3" placeholder="Tell us the story behind this moment..."></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Roast Level</label>
+                        <select class="form-control" id="roastLevel">
+                            <option>😊 Friendly Tease</option>
+                            <option>😂 Classic Roast</option>
+                            <option>🔥 Savage Mode</option>
+                            <option>💛 Pure Love</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-modern" onclick="uploadMemory()">
+                        <i class="fas fa-upload"></i> Add to Gallery
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer style="background: rgba(0, 0, 0, 0.5); padding: 60px 0;">
+    <footer style="background: linear-gradient(135deg, #2d3436, #636e72); color: white; padding: 60px 0;">
         <div class="container text-center">
-            <h3 class="mb-4 scroll-reveal">🎂 September 4th, 2025 - Loki mams's Special Day! 🎂</h3>
-            <p class="fs-5 mb-4 scroll-reveal">For our favorite contradiction, fashion icon, and loveable person! 💛</p>
+            <h3 class="mb-4">🎂 September 4th, 2025 - Loki mams's Special Day! 🎂</h3>
+            <p class="fs-5 mb-4">For our favorite contradiction, fashion icon, soft-hearted "playboy", and the most loveable person we know! 💛</p>
             
-            <div class="scroll-reveal">
-                <button class="btn-futuristic me-3 clickable" onclick="shareTheRoast()">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>👔 Best Dressed</h5>
+                    <p>Always looking sharp!</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>💛 Biggest Heart</h5>
+                    <p>Loves everyone deeply!</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>😂 Best Entertainment</h5>
+                    <p>Keeps us laughing always!</p>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <button class="btn btn-modern me-3" onclick="downloadGallery()">
+                    <i class="fas fa-download"></i> Download Memories
+                </button>
+                <button class="btn btn-modern" onclick="shareTheRoast()">
                     <i class="fas fa-share"></i> Share Loki mams's Roast
                 </button>
             </div>
             
-            <p class="mt-4 opacity-75 scroll-reveal">Happy Birthday Loki mams! You're our favorite beautiful disaster! 💛😂</p>
+            <p class="mt-4 opacity-75">Happy Birthday Loki mams! You're our favorite beautiful contradiction! 💛😂</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Loading Screen
-        window.addEventListener('load', function() {
-            const loadingScreen = document.getElementById('loadingScreen');
-            setTimeout(() => {
-                loadingScreen.style.opacity = '0';
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                }, 500);
-            }, 1500);
-        });
-
-        // Custom Cursor
-        const cursor = document.getElementById('cursor');
-        const cursorFollower = document.getElementById('cursorFollower');
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-        });
-
-        function animateFollower() {
-            followerX += (mouseX - followerX) * 0.1;
-            followerY += (mouseY - followerY) * 0.1;
-            cursorFollower.style.left = followerX + 'px';
-            cursorFollower.style.top = followerY + 'px';
-            requestAnimationFrame(animateFollower);
-        }
-        animateFollower();
-
-        // Mouse Trail Effect
-        const trails = [];
-        document.addEventListener('mousemove', (e) => {
-            const trail = document.createElement('div');
-            trail.className = 'mouse-trail';
-            trail.style.left = e.clientX + 'px';
-            trail.style.top = e.clientY + 'px';
-            document.body.appendChild(trail);
-            
-            trails.push(trail);
-            if (trails.length > 10) {
-                const oldTrail = trails.shift();
-                oldTrail.remove();
-            }
-            
-            setTimeout(() => {
-                trail.style.opacity = '0';
-                setTimeout(() => {
-                    if (trail.parentNode) {
-                        trail.remove();
-                    }
-                }, 300);
-            }, 100);
-        });
-
-        // Scroll Progress Bar
-        window.addEventListener('scroll', () => {
-            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-            document.getElementById('progressBar').style.width = scrollPercent + '%';
-        });
-
-        // Floating Particles
-        function createParticles() {
-            const container = document.getElementById('particlesContainer');
-            const particleCount = 50;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                const type = Math.random() > 0.6 ? 'particle-1' : Math.random() > 0.3 ? 'particle-2' : 'particle-3';
-                particle.className = `particle ${type}`;
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 10 + 's';
-                container.appendChild(particle);
-            }
-        }
-
-        // Scroll Reveal Animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all scroll reveal elements
-        document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right').forEach(el => {
-            observer.observe(el);
-        });
-
         // Countdown Timer
         function updateCountdown() {
             const birthday = new Date('2025-09-04T00:00:00+05:30');
@@ -1116,140 +1852,347 @@
             }
         }
 
-        // Interactive Functions
-        function startPersonalityRoast() {
-            createFireworks();
-            document.querySelector('.py-5').scrollIntoView({ behavior: 'smooth' });
+        // Hero Section Functions
+        function startJourney() {
+            showHearts();
+            document.querySelector('.personality-grid').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function createFireworks() {
-            const colors = ['#667eea', '#764ba2', '#f093fb', '#fdcb6e'];
+        function scrollToGallery() {
+            document.querySelector('.gallery-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Gallery Functions
+        function openUploadModal(type) {
+            const modal = new bootstrap.Modal(document.getElementById('uploadModal'));
+            const title = document.querySelector('#uploadModal .modal-title');
+            const fileInput = document.getElementById('fileInput');
             
-            for (let i = 0; i < 50; i++) {
-                const firework = document.createElement('div');
-                firework.style.position = 'fixed';
-                firework.style.left = Math.random() * 100 + '%';
-                firework.style.top = Math.random() * 100 + '%';
-                firework.style.width = '6px';
-                firework.style.height = '6px';
-                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                firework.style.borderRadius = '50%';
-                firework.style.zIndex = '9999';
-                firework.style.animation = `firework ${Math.random() * 2 + 1}s ease-out forwards`;
-                document.body.appendChild(firework);
-
-                setTimeout(() => firework.remove(), 3000);
-            }
-        }
-
-        function playVideo(type) {
-            const messages = {
-                confidence: "🎬 Playing: The Confidence Speech\n\n'I am the ultimate playboy!' - Loki mams 😂",
-                style: "🎬 Playing: Fashion Show Loki mams\n\nThis one's actually fire! ✨👔",
-                crying: "🎬 Playing: The Emotional Moment\n\nOur sweet Loki mams! 💛😭"
-            };
-            
-            alert(messages[type]);
-            createFireworks();
-        }
-
-        function openUploadModal() {
-            alert("📸 Upload Modal Opening!\n\nAdd your favorite Loki mams memories! 📱✨");
-        }
-
-        function viewSlideshow() {
-            alert("📱 Slideshow Mode!\n\nFull-screen Loki mams experience! 🍿😂");
-        }
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function shareTheRoast() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Lokesh Loki mams\'s Birthday Roast!',
-                    text: 'Come celebrate our favorite contradiction! 😂💛',
-                    url: window.location.href
-                });
+            if (type === 'photo') {
+                title.textContent = '📸 Add Loki mams\'s Photo Memory';
+                fileInput.accept = 'image/*';
             } else {
-                alert("📱 Share Loki mams's Birthday Roast!\n\nSpread the love and laughter! 😂💛");
+                title.textContent = '🎬 Add Loki mams\'s Video Memory';
+                fileInput.accept = 'video/*';
+            }
+            
+            modal.show();
+        }
+
+        function previewFile(input) {
+            const preview = document.getElementById('uploadPreview');
+            const file = input.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    if (file.type.startsWith('image/')) {
+                        preview.innerHTML = `<img src="${e.target.result}" class="img-fluid rounded" style="max-height: 200px;">`;
+                    } else if (file.type.startsWith('video/')) {
+                        preview.innerHTML = `<video src="${e.target.result}" class="img-fluid rounded" style="max-height: 200px;" controls></video>`;
+                    }
+                };
+                reader.readAsDataURL(file);
             }
         }
 
-        // Birthday Wishes
+        function uploadMemory() {
+            const title = document.getElementById('uploadTitle').value;
+            const description = document.getElementById('uploadDescription').value;
+            const roastLevel = document.getElementById('roastLevel').value;
+            
+            if (!title) {
+                alert('Please add a title for this memory!');
+                return;
+            }
+            
+            // Simulate upload success
+            alert(`🎉 Memory Added Successfully!\n\nTitle: ${title}\nRoast Level: ${roastLevel}\n\nLoki mams's going to love/hate this! 😂`);
+            
+            // Close modal and reset form
+            bootstrap.Modal.getInstance(document.getElementById('uploadModal')).hide();
+            document.getElementById('uploadTitle').value = '';
+            document.getElementById('uploadDescription').value = '';
+            document.getElementById('uploadPreview').innerHTML = '';
+            document.getElementById('fileInput').value = '';
+            
+            showHearts();
+        }
+
+        function openGalleryFullscreen() {
+            alert("📱 Gallery Slideshow Mode! 📱\n\nGet ready for a full-screen journey through Loki mams's most memorable moments! Grab some popcorn! 🍿😂");
+        }
+
+        // Enhanced video playback function
+        function playVideoFile(videoSrc) {
+            // Create modal for video playback
+            const videoModal = document.createElement('div');
+            videoModal.className = 'modal fade';
+            videoModal.innerHTML = `
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">🎬 Loki mams's Epic Moment</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body p-0">
+                            <video controls autoplay class="w-100" style="max-height: 70vh;">
+                                <source src="${videoSrc}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(videoModal);
+            const modal = new bootstrap.Modal(videoModal);
+            modal.show();
+            
+            // Remove modal after closing
+            videoModal.addEventListener('hidden.bs.modal', function() {
+                document.body.removeChild(videoModal);
+            });
+            
+            showHearts();
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.currentTarget.classList.add('dragover');
+        }
+
+        function handleVideoDrop(e) {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                const fileInput = document.getElementById('fileInput');
+                fileInput.files = files;
+                previewFile(fileInput);
+                openUploadModal('video');
+            }
+        }
+
+        function createVideoPlaylist() {
+            alert("🎵 Creating Loki mams's Epic Playlist! 🎵\n\nCombining all of Loki mams's legendary moments into one epic compilation! This is going to be the best birthday gift ever! 🎬✨");
+            showHearts();
+        }
+
+        // Birthday Gift Functions
+        function revealGiftPhoto() {
+            const giftContent = document.getElementById('giftPhotoContent');
+            giftContent.innerHTML = `
+                <img src="images/3.png" alt="Loki mams with New GF" class="img-fluid rounded-4 mb-3" style="max-width: 100%; max-height: 400px; object-fit: cover; box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+                <h4>Loki mams with His New GF 💕</h4>
+                <img src="images/1.png" alt="Loki mams with New Body" class="img-fluid rounded-4 mb-3" style="max-width: 100%; max-height: 400px; object-fit: cover; box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+                <h4>Loki mams with His New Body 💕</h4>
+                <p class="fs-5">The moment we've all been waiting for! Our soft-hearted Loki mams finally found his perfect match! Look at that genuine happiness! 🥰✨</p>
+                <div class="mt-3">
+                    <span class="badge bg-success fs-6 px-4 py-2">💛 True Love Unlocked! 💛</span>
+                </div>
+            `;
+            
+            showHearts();
+            alert("🎁 SURPRISE REVEALED! 🎁\n\n💕 Loki mams with His New GF! 💕\n\nThe moment we've all been waiting for! Our soft-hearted Loki mams finally found his perfect match! Look at that genuine happiness! 🥰✨\n\nHappy Birthday Loki mams! Here's to your new love story! 🎂💛");
+        }
+
+        // Birthday wishes functionality
         document.getElementById('wishForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const name = document.getElementById('wishName').value;
             const message = document.getElementById('wishMessage').value;
+            const type = document.getElementById('messageType').value;
             
             if (name && message) {
-                addWish(name, message);
+                addWish(name, message, type);
                 this.reset();
-                createFireworks();
+                showHearts();
             }
         });
 
-        function addWish(name, message) {
+        function addWish(name, message, type) {
             const wishesContainer = document.getElementById('wishesContainer');
             const wishCard = document.createElement('div');
-            wishCard.className = 'col-lg-6 mb-4 scroll-reveal revealed';
+            wishCard.className = 'col-lg-6 mb-4 fade-in-up';
             
+            const typeColors = {
+                'Loving Roast 😂💛': 'bg-warning',
+                'Pure Love 💛': 'bg-success',
+                'Savage Truth 🔥': 'bg-danger',
+                'Motivational (With Love) 💪': 'bg-info'
+            };
+
             wishCard.innerHTML = `
-                <div class="modern-card">
+                <div class="personality-card">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h6 class="mb-0"><i class="fas fa-user-heart"></i> ${name}</h6>
-                        <span class="badge bg-primary rounded-pill">💛 With Love</span>
+                        <span class="badge ${typeColors[type]} rounded-pill">${type}</span>
                     </div>
                     <p>${message}</p>
-                    <small class="opacity-75"><i class="far fa-clock"></i> ${new Date().toLocaleString()}</small>
+                    <small class="text-muted"><i class="far fa-clock"></i> ${new Date().toLocaleString()}</small>
                 </div>
             `;
             
             wishesContainer.insertBefore(wishCard, wishesContainer.firstChild);
         }
 
-        // Add CSS animations
-        const additionalStyles = document.createElement('style');
-        additionalStyles.textContent = `
-            @keyframes firework {
-                0% { 
-                    transform: scale(0) rotate(0deg);
-                    opacity: 1;
-                }
-                100% { 
-                    transform: scale(4) rotate(360deg);
-                    opacity: 0;
-                }
+        // Utility Functions
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showHearts() {
+            const colors = ['💛', '💚', '💙', '💜', '❤️', '🧡', '🤍', '💖', '💕', '💝'];
+            
+            for (let i = 0; i < 25; i++) {
+                const heart = document.createElement('div');
+                heart.textContent = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.position = 'fixed';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = '100%';
+                heart.style.fontSize = Math.random() * 2 + 1 + 'rem';
+                heart.style.zIndex = '9999';
+                heart.style.pointerEvents = 'none';
+                heart.style.animation = `heartFloat ${Math.random() * 3 + 2}s ease-out forwards`;
+                document.body.appendChild(heart);
+
+                setTimeout(() => heart.remove(), 5000);
             }
-        `;
-        document.head.appendChild(additionalStyles);
+        }
+
+        function downloadGallery() {
+            alert("📥 Downloading Loki mams's Memory Package! 📥\n\nCreating a ZIP file with all photos, videos, and birthday wishes! Perfect keepsake for Loki mams! 💾✨");
+        }
+
+        function shareTheRoast() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Lokesh Loki mams\'s Birthday Roast!',
+                    text: 'Come celebrate our favorite stylish, soft-hearted, confident contradiction! 😂💛',
+                    url: window.location.href
+                });
+            } else {
+                alert("📱 Share Loki mams's Birthday Roast!\n\nCopy this URL and let everyone join the celebration of our favorite beautiful contradiction! 😂💛");
+            }
+        }
+
+        // Sample wishes
+        const sampleWishes = [
+            {
+                name: "Best Friend Forever",
+                message: "Loki mams, you beautiful paradox! Happy Birthday to the most confident crybaby, the stylish engineer with backlogs, and the playboy who runs away from girls! We love you exactly as you are! 💛😂",
+                type: "Loving Roast 😂💛"
+            },
+            {
+                name: "College Gang",
+                message: "Happy Birthday to our favorite troll target! Loki mams, your confidence is inspiring, your heart is pure gold, and your fashion sense is unmatched! Keep being your amazing contradictory self! 👔💛",
+                type: "Pure Love 💛"
+            },
+            {
+                name: "The Roast Master",
+                message: "Dear Loki mams, you're the only person who can be a business mastermind with engineering backlogs, a playboy who's scared of girls, and a tough guy who cries when someone is mean! Never change! 🔥😂",
+                type: "Savage Truth 🔥"
+            }
+        ];
 
         // Initialize everything
         document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
             setInterval(updateCountdown, 1000);
             updateCountdown();
-
-            // Sample wish
-            setTimeout(() => {
-                addWish("Best Friend", "Loki mams, you beautiful contradiction! Happy Birthday to our favorite stylish crybaby! 💛😂");
-            }, 3000);
-        });
-
-        // Hover effects for clickable elements
-        document.querySelectorAll('.clickable').forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(1.5)';
-                cursorFollower.style.transform = 'scale(2)';
-            });
             
-            element.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                cursorFollower.style.transform = 'scale(1)';
+            // Add sample wishes after delay
+            setTimeout(() => {
+                sampleWishes.forEach((wish, index) => {
+                    setTimeout(() => addWish(wish.name, wish.message, wish.type), index * 2000);
+                });
+            }, 3000);
+
+            // Add scroll animations
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.personality-card, .gallery-item, .video-card').forEach(el => {
+                observer.observe(el);
             });
+
+            // Initialize floating particles
+            createFloatingParticles();
         });
+
+        function createFloatingParticles() {
+            const particles = ['🎭', '💼', '👔', '💛', '😂', '🎯', '📚', '💔', '🏆', '✨'];
+            
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+                particle.style.position = 'fixed';
+                particle.style.left = '-50px';
+                particle.style.top = Math.random() * window.innerHeight + 'px';
+                particle.style.fontSize = Math.random() * 1.5 + 1 + 'rem';
+                particle.style.zIndex = '1';
+                particle.style.pointerEvents = 'none';
+                particle.style.opacity = '0.3';
+                particle.style.animation = `floatAcross ${Math.random() * 10 + 15}s linear forwards`;
+                document.body.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 25000);
+            }, 3000);
+        }
+
+        // Add CSS for floating particles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatAcross {
+                from {
+                    transform: translateX(-50px);
+                }
+                to {
+                    transform: translateX(calc(100vw + 50px));
+                }
+            }
+
+            .video-upload-area.dragover {
+                border-color: #764ba2;
+                background: rgba(118, 75, 162, 0.1);
+                transform: scale(1.02);
+            }
+        `;
+        document.head.appendChild(style);
+        // Add to your existing JavaScript section
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// Adjust modal behavior for mobile
+function openUploadModal(type) {
+    const modal = new bootstrap.Modal(document.getElementById('uploadModal'));
+    const title = document.querySelector('#uploadModal .modal-title');
+    const fileInput = document.getElementById('fileInput');
+    
+    if (type === 'photo') {
+        title.textContent = '📸 Add Photo';
+        fileInput.accept = 'image/*';
+    } else {
+        title.textContent = '🎬 Add Video';
+        fileInput.accept = 'video/*';
+    }
+    
+    // Adjust modal size for mobile
+    if (isMobile()) {
+        document.querySelector('#uploadModal .modal-dialog').classList.add('w-100-mobile');
+    }
+    
+    modal.show();
+}
+
     </script>
 </body>
 </html>
